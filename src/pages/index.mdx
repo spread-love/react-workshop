@@ -1,21 +1,35 @@
-import { Link } from "gatsby"
+import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
 
 <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
 
-# Hi people
-
-Welcome to your new Gatsby site.
-
-Now go build something great.
-
-<div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-  <Image />
-</div>
-
-<Link to="/page-2/">Go to page 2</Link>
+<ol>
+  {props.data.allMdx.edges
+    .sort((a, b) => a.node.frontmatter.order - b.node.frontmatter.order)
+    .map(({ node }) => (
+      <li>
+        <Link to={node.frontmatter.path}>{node.frontmatter.title}</Link>
+      </li>
+    ))}
+</ol>
 
 export default Layout
+
+export const pageQuery = graphql`
+  query allLessons {
+    allMdx(limit: 999) {
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            path
+            order
+          }
+        }
+      }
+    }
+  }
+`
