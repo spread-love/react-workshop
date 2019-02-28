@@ -14,13 +14,17 @@
     "gatsby-plugin-offline": "^2.0.24",
     "gatsby-plugin-react-helmet": "^3.0.6",
     "gatsby-plugin-sharp": "^2.0.22",
+    "gatsby-plugin-typography": "^2.2.7",
     "gatsby-remark-images": "^3.0.5",
     "gatsby-source-filesystem": "^2.0.22",
     "gatsby-transformer-sharp": "^2.1.14",
     "prop-types": "^15.7.2",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
-    "react-helmet": "^5.2.0"
+    "react-helmet": "^5.2.0",
+    "react-typography": "^0.16.18",
+    "typography": "^0.16.18",
+    "typography-theme-doelger": "^0.16.18"
   },
   "devDependencies": {
     "prettier": "^1.16.4"
